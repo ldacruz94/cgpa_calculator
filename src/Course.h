@@ -2,7 +2,6 @@
 #ifndef COURSE_H
 #define COURSE_H
 
-#include <iostream>
 #include <sstream>
 
 class Course {
@@ -10,44 +9,28 @@ class Course {
   public:
     Course();
 
-    Course(std::string courseName, double creditHours, std::string grade, double gradePoint) {
+    Course(std::string courseName, double creditHours, char grade, double gradePoint) {
       this->courseName = courseName;
       this->creditHours = creditHours;
       this->grade = grade;
       this->gradePoint = gradePoint;
     }
 
-    std::string getCourseName() {
-      return courseName;
-    }
+    std::string getCourseName() const { return courseName; }
 
-    double getCreditHours() {
-      return creditHours;
-    }
+    double getCreditHours() { return creditHours; }
 
-    std::string getGrade() {
-      return grade;
-    }
+    char getGrade() { return grade; }
 
-    double getGradePoint(){
-      return gradePoint;
-    }
+    double getGradePoint() const { return gradePoint; }
 
-    void setCourseName(std::string name) {
-      this->courseName = name;
-    }
+    void setCourseName(std::string name) { this->courseName = name; }
 
-    void setCreditHours(double hours) {
-      this->creditHours = hours;
-    }
+    void setCreditHours(double hours) {this->creditHours = hours; }
 
-    void setGrade(std::string grade) {
-      this->grade = grade;
-    }
+    void setGrade(char grade) {this->grade = grade; }
 
-    void setGradePoint(double gradePoint) {
-      this->gradePoint = gradePoint;
-    }
+    void setGradePoint(double gradePoint) {this->gradePoint = gradePoint; }
 
     std::string toString() const {
       std::stringstream ss;
@@ -61,10 +44,9 @@ class Course {
 
   private:
     std::string courseName;
-    double creditHours;
-    std::string grade;
-    double gradePoint;
+    double creditHours{};
+    char grade{};
+    double gradePoint{};
   };
-
 
 #endif //COURSE_H

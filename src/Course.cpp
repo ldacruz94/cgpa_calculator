@@ -5,5 +5,4 @@
 #include "Course.h"
 
 Course::Course() = default;
-Course::~Course() = default;
 
